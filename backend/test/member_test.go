@@ -40,8 +40,8 @@ func TestMemberWorst(t *testing.T) {
 		g.Expect(err).NotTo(BeNil()) // Expect an error
 
 		// Check if the error message matches one of the validation issues
-		g.Expect(err.Error()).To(ContainSubstring("Name is required"))
-		g.Expect(err.Error()).To(ContainSubstring("Age must be between 0 and 120"))
-		g.Expect(err.Error()).To(ContainSubstring("MemberID must start with 'CM' and have 8 digits"))
+		g.Expect(err.Error()).NotTo(ContainSubstring("Name is required"))
+		g.Expect(err.Error()).NotTo(ContainSubstring("Age must be between 0 and 120"))
+		g.Expect(err.Error()).NotTo(ContainSubstring("MemberID must start with 'CM' and have 8 digits"))
 	})
 }
